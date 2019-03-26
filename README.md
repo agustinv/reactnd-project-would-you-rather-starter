@@ -65,12 +65,12 @@ Rubrik https://review.udacity.com/#!/rubrics/1567/view
 ### Views and Components
 
 There are 4 views in the app
-Home
+Dashboard
 New Question
 Leader Board
 Question
 
-Home View Components
+Dashboard View Components
     - App
     - SignIn Form
     - Nav
