@@ -71,30 +71,67 @@ Leader Board
 Poll
 
 Home View Components
- - App
- - Nav
-     - links to Home, New Poll, Leader Board
-     - logged in user, and logout link
- - Unanswered Polls List and Answered Poll List
-     - Polls
+    - App
+    - SignIn Form
+    - Nav
+        - links to Home, New Poll, Leader Board
+        - logged in user, and logout link
+    - Polls List: Unanswered Polls List and Answered Poll List
+         - PollSummary
+             Summary of answers and link to poll
 
 Leader Board View Components
     - App
+    - SignIn Form
     - Nav
-    - List of Users
-        - User: image, name, answered question total, created question total, and score
+    - UsersScores List
+        - UserScore: image, name, answered question total, created question total, and score
 
 New Poll View Components
     - App
+    - SignIn Form
     - Nav
     - New Poll Form
 
 Poll View Components
     - App
+    - 404 Page Component
+    - SignIn Form
     - Nav
-    - Poll
+    - Poll Component
         - Name of author, avatar, form selection and submit (unanswerd)
         - Name of author, avatar, Results and loggedin user selection
+
+### Determine Events In The App
+
+* Nav Component
+    - Get the authedUser to display state on nav
+    - Logout authedUser
+
+* SignIn Form Component
+    - SignIn User/set authedUser
+
+* Poll List Component
+    - Get all Polls
+    - Get authedUser so we can toggle between filtered poll lists
+
+* PollSummary
+    - Get poll id from list of polls
+    - Get authedUser to know what to display in summary
+
+* Poll Component
+    - Get poll id from url
+    - Get authedUser to display question or results, and submit question answer
+
+* New Poll Component
+    - Get authedUser so user can create new poll
+    - Set the text for two answers options of poll
+
+* LeaderBoard Component
+    - Get all Users so we can display UserScore list
+
+* UserScore Component
+    - Get all polls so we can calculate scores
 
 
 ## Data
