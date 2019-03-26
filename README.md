@@ -95,7 +95,7 @@ New Question View Components
 
 Question View Components
     - App
-    - 404 Page Component
+    - 404 Page Component/NoMatch
     - SignIn Form
     - Nav
     - Question Component
