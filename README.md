@@ -54,11 +54,48 @@ Leaderboard Page
 
 * Entries
 User’s name;
-User’s picture;
+User’s picture
 Number of questions the user asked; and
 Number of questions the user answered
 
 Rubrik https://review.udacity.com/#!/rubrics/1567/view
+
+## Project Planing
+
+### Views and Components
+
+There are 4 views in the app
+Home
+New Poll
+Leader Board
+Poll
+
+Home View Components
+ - App
+ - Nav
+     - links to Home, New Poll, Leader Board
+     - logged in user, and logout link
+ - Unanswered Polls List and Answered Poll List
+     - Polls
+
+Leader Board View Components
+    - App
+    - Nav
+    - List of Users
+        - User: image, name, answered question total, created question total, and score
+
+New Poll View Components
+    - App
+    - Nav
+    - New Poll Form
+
+Poll View Components
+    - App
+    - Nav
+    - Poll
+        - Name of author, avatar, form selection and submit (unanswerd)
+        - Name of author, avatar, Results and loggedin user selection
+
 
 ## Data
 
