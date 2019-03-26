@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { handleInitialData } from '../actions/shared'
 import LoadingBar from 'react-redux-loading'
-import Dashboard from './Dashboard'
-import NoMatch from './NoMatch'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Switch } from 'react-router-dom'
+import { handleInitialData } from '../actions/shared'
+import Dashboard from './Dashboard'
+import NoMatch from './NoMatch'
+import Nav from './Nav'
 
 class App extends Component {
   componentDidMount() {
@@ -17,6 +18,7 @@ class App extends Component {
       <Router>
         <Fragment>
           <LoadingBar />
+          <Nav />
           <div className='container'>
             { authedUser === null
               ? null
