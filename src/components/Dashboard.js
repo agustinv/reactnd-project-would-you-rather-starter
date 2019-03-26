@@ -5,6 +5,13 @@ class Dashboard extends Component {
   state = {
     showUnanswered: true,
   }
+  showUnanswered = (e) => {
+    this.setState(() => ({ showUnanswered: true }))
+  }
+  showAnswered = (e) => {
+    this.setState(() => ({ showUnanswered: false }))
+  }
+
   render () {
     const { showUnanswered } = this.state
     const { unansweredIds, answeredIds } = this.props
@@ -16,10 +23,10 @@ class Dashboard extends Component {
       <div>
         <header className='questions-selection'>
           <ul>
-            <li className={unansweredClass} >
+            <li className={unansweredClass} onClick={this.showUnanswered}>
               Unanswered
             </li>
-            <li className={answeredClass} >
+            <li className={answeredClass} onClick={this.showAnswered}>
               Answered
             </li>
           </ul>
