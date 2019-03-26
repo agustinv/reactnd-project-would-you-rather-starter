@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import LoadingBar from 'react-redux-loading'
 import Dashboard from './Dashboard'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 class App extends Component {
   componentDidMount() {
@@ -10,16 +11,18 @@ class App extends Component {
   }
   render() {
     return (
-      <Fragment>
-        <LoadingBar />
-        <div className='container'>
-          {this.props.authenticated === true
-            ? null
-            : <div>
-                <Dashboard />
-            </div>}
-        </div>
-      </Fragment>
+      <Router>
+        <Fragment>
+          <LoadingBar />
+          <div className='container'>
+            {this.props.authenticated === true
+              ? null
+              : <div>
+                  <Dashboard />
+              </div>}
+          </div>
+        </Fragment>
+      </Router>
     );
   }
 }

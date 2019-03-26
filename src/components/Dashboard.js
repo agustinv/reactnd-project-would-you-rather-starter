@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import QuestionSummary from './QuestionSummary'
 
 class Dashboard extends Component {
   state = {
@@ -21,19 +22,20 @@ class Dashboard extends Component {
 
     return (
       <div>
-        <header className='dashboard-list'>
+        <header className='center'>
           <ul>
-            <li className={unansweredClass} onClick={this.showUnanswered}>
+            <span className={unansweredClass} onClick={this.showUnanswered}>
               Unanswered
-            </li>
-            <li className={answeredClass} onClick={this.showAnswered}>
+            </span>
+            <span>&nbsp;&middot;&nbsp;</span>
+            <span className={answeredClass} onClick={this.showAnswered}>
               Answered
-            </li>
+            </span>
           </ul>
         </header>
         <ul className='dashboard-list'>
           {questionsIds.map((id) => (
-            <li key={id} >{id}</li>
+            <QuestionSummary key={id} id={id}/>
           ))}
         </ul>
       </div>
