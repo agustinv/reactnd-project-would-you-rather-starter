@@ -6,6 +6,60 @@ The `_DATA.js` file represents a fake database and methods that let you access t
 
 Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
 
+## Project Overview
+
+In your app, users will be able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
+
+* The person using your application should have a way of impersonating/logging in as an existing user
+* all pages in the application should require authentication before display
+* user can logout and log back in
+
+Root Page
+* toggle between his/her answered and unanswered polls on the home page
+* polls are sorted by timestamp of when created
+* unanswered questions should be shown by default
+* name of the logged in user should be visible on the page
+* clicking on poll goes to poll details page
+
+Poll Detail Page
+* details of each poll should be available at questions/:question_id
+
+unanswered
+Text “Would You Rather”;
+Avatar of the user who posted the polling question; and
+Two options.
+
+answered
+Text of the option;
+Number of people who voted for that option; and
+Percentage of people who voted for that option.
+
+404 page for when poll doesnt exist
+
+Voting on Poll
+* Upon voting in a poll, all of the information of an answered poll should be displayed.
+* The user’s response should be recorded and clearly visible on the poll details page. (no changing of voting allowed)
+
+
+Adding Poll Page
+* The form for posting new polling questions should be available at the /add route.
+* should show the text “Would You Rather” and have a form for creating two options
+* Upon submitting the form, a new poll should be created, and the user should be taken to the home page
+* and the new polling question should appear in the correct category on the home page.
+
+
+Leaderboard Page
+* The application should have a leaderboard that’s available at the /leaderboard route.
+* ordered in descending order based on the sum of the number of questions they’ve asked and the number of questions they’ve answered
+
+* Entries
+User’s name;
+User’s picture;
+Number of questions the user asked; and
+Number of questions the user answered
+
+Rubrik https://review.udacity.com/#!/rubrics/1567/view
+
 ## Data
 
 There are two types of objects stored in our database:
@@ -55,17 +109,17 @@ Your code will talk to the database via 4 methods:
 
 1) `_getUsers()` Method
 
-*Description*: Get all of the existing users from the database.  
+*Description*: Get all of the existing users from the database.
 *Return Value*: Object where the key is the user’s id and the value is the user object.
 
 2) `_getQuestions()` Method
 
-*Description*: Get all of the existing questions from the database.  
+*Description*: Get all of the existing questions from the database.
 *Return Value*: Object where the key is the question’s id and the value is the question object.
 
 3) `_saveQuestion(question)` Method
 
-*Description*: Save the polling question in the database.  
+*Description*: Save the polling question in the database.
 *Parameters*:  Object that includes the following properties: `author`, `optionOneText`, and `optionTwoText`. More details about these properties:
 
 | Attribute | Type | Description |
