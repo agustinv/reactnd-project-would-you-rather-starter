@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
+import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
   componentDidMount() {
@@ -8,9 +9,12 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        Hello world
-      </div>
+      <Fragment>
+        <LoadingBar />
+        <div>
+          Hello world
+        </div>
+      </Fragment>
     );
   }
 }
