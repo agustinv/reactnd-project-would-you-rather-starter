@@ -133,7 +133,15 @@ Question View Components
 * UserScore Component
     - Get all Questions so we can calculate scores
 
-###
+### Data and the Store
+
+We need to keep track of the following in the redux store
+
+users,
+polls
+authedUser
+
+Note that if the information coming from our API was normalized we wouldnt have to keep track of users, but since users have summary of answers (as well as the questions) then instead of having to write  more complex helpers and mapStateToProps we can use the (not normalized) users from API for easier display of score summary.
 
 
 ## Data
