@@ -21,7 +21,7 @@ class Dashboard extends Component {
 
     return (
       <div>
-        <header className='questions-selection'>
+        <header className='dashboard-list'>
           <ul>
             <li className={unansweredClass} onClick={this.showUnanswered}>
               Unanswered
@@ -31,7 +31,7 @@ class Dashboard extends Component {
             </li>
           </ul>
         </header>
-        <ul className='questions-list'>
+        <ul className='dashboard-list'>
           {questionsIds.map((id) => (
             <li key={id} >{id}</li>
           ))}

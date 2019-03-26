@@ -12,11 +12,13 @@ class App extends Component {
     return (
       <Fragment>
         <LoadingBar />
-        {this.props.authenticated === true
-          ? null
-          : <div>
-              <Dashboard />
-          </div>}
+        <div className='container'>
+          {this.props.authenticated === true
+            ? null
+            : <div>
+                <Dashboard />
+            </div>}
+        </div>
       </Fragment>
     );
   }
