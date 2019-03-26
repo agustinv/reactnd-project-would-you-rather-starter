@@ -10,7 +10,7 @@ class Dashboard extends Component {
     const { unansweredIds, answeredIds } = this.props
     const unansweredClass = showUnanswered ? 'active' : ''
     const answeredClass = showUnanswered ? '' : 'active'
-    const questionsIds = showUnanswered ? answeredIds : unansweredIds
+    const questionsIds = showUnanswered ? unansweredIds : answeredIds
 
     return (
       <div>

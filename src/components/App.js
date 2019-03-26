@@ -12,10 +12,19 @@ class App extends Component {
     return (
       <Fragment>
         <LoadingBar />
-        <Dashboard />
+        {this.props.authenticated === true
+          ? null
+          : <div>
+              <Dashboard />
+          </div>}
       </Fragment>
     );
   }
 }
 
-export default connect()(App);
+function mapStateToProps ({ authedUser }) {
+  return {
+    authenticated: authedUser === null
+  }
+}
+export default connect(mapStateToProps)(App);
