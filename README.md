@@ -15,14 +15,14 @@ In your app, users will be able to answer questions, see which questions they ha
 * user can logout and log back in
 
 Root Page
-* toggle between his/her answered and unanswered polls on the home page
-* polls are sorted by timestamp of when created
+* toggle between his/her answered and unanswered Questions on the home page
+* Questions are sorted by timestamp of when created
 * unanswered questions should be shown by default
 * name of the logged in user should be visible on the page
-* clicking on poll goes to poll details page
+* clicking on Question goes to Question details page
 
-Poll Detail Page
-* details of each poll should be available at questions/:question_id
+Question Detail Page
+* details of each Question should be available at questions/:question_id
 
 unanswered
 Text “Would You Rather”;
@@ -34,17 +34,17 @@ Text of the option;
 Number of people who voted for that option; and
 Percentage of people who voted for that option.
 
-404 page for when poll doesnt exist
+404 page for when Question doesnt exist
 
-Voting on Poll
-* Upon voting in a poll, all of the information of an answered poll should be displayed.
-* The user’s response should be recorded and clearly visible on the poll details page. (no changing of voting allowed)
+Voting on Question
+* Upon voting in a Question, all of the information of an answered Question should be displayed.
+* The user’s response should be recorded and clearly visible on the Question details page. (no changing of voting allowed)
 
 
-Adding Poll Page
+Adding Question Page
 * The form for posting new polling questions should be available at the /add route.
 * should show the text “Would You Rather” and have a form for creating two options
-* Upon submitting the form, a new poll should be created, and the user should be taken to the home page
+* Upon submitting the form, a new Question should be created, and the user should be taken to the home page
 * and the new polling question should appear in the correct category on the home page.
 
 
@@ -66,19 +66,19 @@ Rubrik https://review.udacity.com/#!/rubrics/1567/view
 
 There are 4 views in the app
 Home
-New Poll
+New Question
 Leader Board
-Poll
+Question
 
 Home View Components
     - App
     - SignIn Form
     - Nav
-        - links to Home, New Poll, Leader Board
+        - links to Home, New Question, Leader Board
         - logged in user, and logout link
-    - Polls List: Unanswered Polls List and Answered Poll List
-         - PollSummary
-             Summary of answers and link to poll
+    - Questions List: Unanswered Questions List and Answered Question List
+         - QuestionSummary
+             Summary of answers and link to Question
 
 Leader Board View Components
     - App
@@ -87,18 +87,18 @@ Leader Board View Components
     - UsersScores List
         - UserScore: image, name, answered question total, created question total, and score
 
-New Poll View Components
+New Question View Components
     - App
     - SignIn Form
     - Nav
-    - New Poll Form
+    - New Question Form
 
-Poll View Components
+Question View Components
     - App
     - 404 Page Component
     - SignIn Form
     - Nav
-    - Poll Component
+    - Question Component
         - Name of author, avatar, form selection and submit (unanswerd)
         - Name of author, avatar, Results and loggedin user selection
 
@@ -111,27 +111,29 @@ Poll View Components
 * SignIn Form Component
     - SignIn User/set authedUser
 
-* Poll List Component
-    - Get all Polls
-    - Get authedUser so we can toggle between filtered poll lists
+* Question List Component
+    - Get all Questions
+    - Get authedUser so we can toggle between filtered Question lists
 
-* PollSummary
-    - Get poll id from list of polls
+* QuestionSummary
+    - Get Question id from list of Questions
     - Get authedUser to know what to display in summary
 
-* Poll Component
-    - Get poll id from url
+* Question Component
+    - Get Question id from url
     - Get authedUser to display question or results, and submit question answer
 
-* New Poll Component
-    - Get authedUser so user can create new poll
-    - Set the text for two answers options of poll
+* New Question Component
+    - Get authedUser so user can create new Question
+    - Set the text for two answers options of Question
 
 * LeaderBoard Component
     - Get all Users so we can display UserScore list
 
 * UserScore Component
-    - Get all polls so we can calculate scores
+    - Get all Questions so we can calculate scores
+
+###
 
 
 ## Data
