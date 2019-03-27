@@ -61,7 +61,6 @@ a {
 ul {
   padding-left: 0;
 }
-
 li {
   list-style-type: none;
   padding: 10px;
@@ -89,6 +88,17 @@ li {
   color: white;
   font-size: 16px;
   line-height: 1.4;
+}
+.leaderboard > .question  > .question-header {
+  background-color: #4CAF50;
+}
+.leaderboard > .question {
+  border: 1px solid #4CAF50;
+}
+.score {
+  float: right;
+  padding-right: 16px;
+  font-weight: 500;
 }
 .question-title {
   padding-top: 22px;

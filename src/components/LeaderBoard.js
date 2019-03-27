@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { calculateUserScore, formatUserScore } from '../utils/helpers'
+import UserScore from './UserScore'
 
 class LeaderBoard extends Component {
   render () {
@@ -8,11 +9,12 @@ class LeaderBoard extends Component {
 
     return (
       <div>
-        <ul className='dashboard-list'>
+        <h3 className="center"> Results </h3>
+        <div className='leaderboard'>
           {userScores.map((user) => (
-            <li>{user.id} {user.score}</li>
+            <UserScore key={user.id} user={user} />
           ))}
-        </ul>
+        </div>
       </div>
     )
   }

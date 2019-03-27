@@ -33,11 +33,11 @@ class Dashboard extends Component {
             </span>
           </ul>
         </header>
-        <ul className='dashboard-list'>
+        <div>
           {questionsIds.map((id) => (
             <QuestionSummary key={id} id={id}/>
           ))}
-        </ul>
+        </div>
       </div>
     )
   }
