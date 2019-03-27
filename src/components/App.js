@@ -8,6 +8,7 @@ import Dashboard from './Dashboard'
 import NoMatch from './NoMatch'
 import Nav from './Nav'
 import LeaderBoard from './LeaderBoard'
+import NewQuestion from './NewQuestion'
 
 class App extends Component {
   componentDidMount() {
@@ -26,6 +27,7 @@ class App extends Component {
               : <Switch>
                   <Route path='/' exact component={Dashboard} />
                   <Route path='/leaderboard' exact component={LeaderBoard} />
+             <Route path='/add' exact component={NewQuestion} />
                   <Route component={NoMatch} />
               </Switch>}
           </div>
