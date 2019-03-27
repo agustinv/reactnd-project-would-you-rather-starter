@@ -39,38 +39,48 @@ class NewQuestion extends Component {
   }
   render() {
     const { optionOne, optionTwo, toHome } = this.state
+    const { showContent } = this.props
 
-    if (toHome === true) {
+    if (toHome === true && showContent === true) {
       return <Redirect to='/' />
     }
 
     return (
       <div>
-        <h3 className='center'>Create New Question</h3>
-        <form className='new-question' onSubmit={this.handleSubmit}>
-          <textarea
-            placeholder="Enter Option One Text Here"
-            value={optionOne}
-            onChange={this.handleOptionOneChange}
-            className='textarea'
-          />
-          <h4 className='center'> - OR - </h4>
-          <textarea
-            placeholder="Enter Option Two Text Here"
-            value={optionTwo}
-            onChange={this.handleOptionTwoChange}
-            className='textarea'
-          />
-          <button
-            className='btn'
-            type='submit'
-            disabled={optionTwo === '' || optionOne === ''}>
-              Submit
-          </button>
-        </form>
+        { showContent === false
+          ? null
+          : <div>
+              <h3 className='center'>Create New Question</h3>
+              <form className='new-question' onSubmit={this.handleSubmit}>
+                <textarea
+                  placeholder="Enter Option One Text Here"
+                  value={optionOne}
+                  onChange={this.handleOptionOneChange}
+                  className='textarea'
+                />
+                <h4 className='center'> - OR - </h4>
+                <textarea
+                  placeholder="Enter Option Two Text Here"
+                  value={optionTwo}
+                  onChange={this.handleOptionTwoChange}
+                  className='textarea'
+                />
+                <button
+                  className='btn'
+                  type='submit'
+                  disabled={optionTwo === '' || optionOne === ''}>
+                    Submit
+                </button>
+              </form>
+            </div>}
       </div>
     )
   }
 }
 
-export default connect()(NewQuestion)
+function mapStateToProps({ authedUser, loadingBar }) {
+  return {
+    showContent: loadingBar ? (loadingBar.default === 0) : false
+  }
+}
+export default connect(mapStateToProps)(NewQuestion)
