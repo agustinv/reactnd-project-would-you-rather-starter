@@ -7,6 +7,7 @@ import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
 import NoMatch from './NoMatch'
 import Nav from './Nav'
+import LeaderBoard from './LeaderBoard'
 
 class App extends Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class App extends Component {
               ? null
               : <Switch>
                   <Route path='/' exact component={Dashboard} />
+                  <Route path='/leaderboard' exact component={LeaderBoard} />
                   <Route component={NoMatch} />
               </Switch>}
           </div>
