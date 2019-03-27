@@ -11,11 +11,16 @@ export function formatQuestionSummary (question, author) {
   }
 }
 
-
-export function formatUserScore (user) {
-  const { id, name, answers, questions, avatarURL } = user
-  const answered = Object.keys(answers).length
-  const created = questions ? questions.length : 0
+export function formatUserScores (user, questions) {
+  const { id, name, avatarURL } = user
+  let answered = 0
+  let created = 0
+  for (const entry of Object.entries(questions)) {
+    const { author, optionOne, optionTwo } = entry[1]
+    if (author === id) { created++ }
+    if (optionOne.votes.includes(id)) { answered++ }
+    if (optionTwo.votes.includes(id)) { answered++ }
+  }
   return {
     id,
     name,
@@ -24,13 +29,4 @@ export function formatUserScore (user) {
     created: created,
     score: (answered + created)
   }
-}
-
-
-
-export function calculateUserScore (user) {
-  const { answers, questions } = user
-  const answered = Object.keys(answers).length
-  const created = questions ? questions.length : 0
-  return answered + created
 }

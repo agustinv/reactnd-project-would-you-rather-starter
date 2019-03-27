@@ -141,7 +141,10 @@ users,
 polls
 authedUser
 
-Note that if the information coming from our API was normalized we wouldnt have to keep track of users, but since users have summary of answers (as well as the questions) then instead of having to write  more complex helpers and mapStateToProps we can use the (not normalized) users from API for easier display of score summary.
+~~Note that if the information coming from our API was normalized we wouldnt have to keep track of users, but since users have summary of answers (as well as the questions) then instead of having to write  more complex helpers and mapStateToProps we can use the (not normalized) users from API for easier display of score summary.~~
+
+Should have looked closer to the _DATA.js.  Adding new questions wont update users answers or questions totals.  Hence, we will ignore that data and use questions as source of truth there, we may add strip the extra information from users so that its not duplicated on store.  This is a nice to have, aka it would be cleaner and make sure that we dont use it but it is un-necessary to do so.
+
 
 Other state like current feed on homepage and forms submits can be handle with react components themselves. No need for persisting these in store.
 
@@ -170,7 +173,7 @@ Questions include:
 
 | Attribute | Type | Description |
 |-----------------|------------------|-------------------|
-| id                  | String | The question’s unique identifier |
+| id            | String | The question’s unique identifier |
 | author        | String | The author’s unique identifier |
 | timestamp | String | The time when the question was created|
 | optionOne | Object | The first voting option|
