@@ -15,23 +15,25 @@ class QuestionSummary extends Component {
 
     return (
       <div className='question'>
-        <img
-          src={avatar}
-          alt={`Avatar of ${name}`}
-          className='avatar'
-        />
+        <div className='question-header'>
+          <img
+            src={avatar}
+            alt={`Avatar of ${name}`}
+            className='avatar'
+          />
+          <div className="question-title">
+            {name} asks:
+            <strong><em> Would you rather?</em></strong>
+          </div>
+        </div>
         <div className='question-info'>
           <div>
-            <span>
-              <strong>{name} asks: </strong>
-              <em>Would you rather?</em>
-            </span>
-            <br/>
             <p>
               ... {optionOneText} ...
               <strong>or</strong>
               ... {optionTwoText} ...
             </p>
+            <br/>
             <Link to={`/questions/${id}`} className='question-link'>
                 View Poll
             </Link>
