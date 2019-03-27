@@ -16,22 +16,20 @@ class Dashboard extends Component {
   render () {
     const { showUnanswered } = this.state
     const { unansweredIds, answeredIds } = this.props
-    const unansweredClass = showUnanswered ? 'active' : ''
-    const answeredClass = showUnanswered ? '' : 'active'
+    const unansweredClass = showUnanswered ? 'active link-item' : 'link-item'
+    const answeredClass = showUnanswered ? 'link-item' : 'active link-item'
     const questionsIds = showUnanswered ? unansweredIds : answeredIds
 
     return (
       <div>
         <header className='center'>
-          <ul>
-            <span className={unansweredClass} onClick={this.showUnanswered}>
-              Unanswered
-            </span>
-            <span>&nbsp;&middot;&nbsp;</span>
-            <span className={answeredClass} onClick={this.showAnswered}>
-              Answered
-            </span>
-          </ul>
+          <span className={unansweredClass} onClick={this.showUnanswered}>
+            Unanswered
+          </span>
+          <span>&nbsp;&middot;&nbsp;</span>
+          <span className={answeredClass} onClick={this.showAnswered}>
+            Answered
+          </span>
         </header>
         <div>
           {questionsIds.map((id) => (

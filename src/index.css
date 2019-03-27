@@ -14,6 +14,7 @@ a {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
+  width: 85%;
 }
 
 .btn {
@@ -44,9 +45,13 @@ a {
 }
 
 .active {
-  font-weight: bold;
+  color: #311B92;
+  font-weight: 600;
 }
-
+.link-item:hover {
+  color: #311B92;
+  text-decoration: underline;
+}
 .nav ul {
   display: flex;
   flex-direction: row;
