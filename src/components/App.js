@@ -10,6 +10,7 @@ import Nav from './Nav'
 import LeaderBoard from './LeaderBoard'
 import NewQuestion from './NewQuestion'
 import QuestionPage from './QuestionPage'
+import SignInForm from './SignInForm'
 
 class App extends Component {
   componentDidMount() {
@@ -25,7 +26,7 @@ class App extends Component {
           <Nav />
           <div className='container'>
             { authedUser === null
-              ? null
+              ? <SignInForm />
               : <Switch>
                   <Route path='/' exact component={Dashboard} />
                   <Route path='/leaderboard' exact component={LeaderBoard} />

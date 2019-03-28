@@ -143,6 +143,18 @@ a {
   margin: 16px 0;
 }
 
+.signin {
+ width: 200px;
+ margin: 0 auto;
+ display: flex;
+ flex-direction: column;
+}
+.signin > select {
+ height: 30px;
+ font-size: 16px;
+ border: 1px solid #9575CD;
+ color: #9575CD;
+}
 .new-question {
   width: 100%;
   max-width: 590px;
