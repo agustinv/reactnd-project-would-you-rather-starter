@@ -138,15 +138,21 @@ QuestionPage View Components
 We need to keep track of the following in the redux store
 
 users,
-polls
+questions,
 authedUser
 
-~~Note that if the information coming from our API was normalized we wouldnt have to keep track of users, but since users have summary of answers (as well as the questions) then instead of having to write  more complex helpers and mapStateToProps we can use the (not normalized) users from API for easier display of score summary.~~
+Revisiting this one more time, (2nd time now).  Again Im not sure why the _DATA.js is not returning normalized data (ie why does answer and authorship are in both data models.)
 
-Should have looked closer to the _DATA.js.  Adding new questions wont update users answers or questions totals.  Hence, we will ignore that data and use questions as source of truth there, we may add strip the extra information from users so that its not duplicated on store.  This is a nice to have, aka it would be cleaner and make sure that we dont use it but it is un-necessary to do so.
+Anyway, in order to make sure that the app functions correctly, I think there are two options
+
+1) ignore questions and answer data from users, and in fact filter that out from redux store (as pointed out before this would be recommended otherwise it can lead to bugs).  In fact just found another bug in Home page accessing that data. [could also have data just in users but same thing]
+
+2) move the handleSaveQuestion and handleSaveQuestionAnswer to share action which after returning dispatch actions to "saveQuestion and saveQuestionAnswers" to both questions and users.  Update reducers accordingly.
+
+I really dislike option #2 here because of the duplication and adding of complexity.  (1.5x number of actions, 2x number of reducers affected)
 
 
-Other state like current feed on homepage and forms submits can be handle with react components themselves. No need for persisting these in store.
+Current feed on homepage and forms submits can be handle with react components themselves. No need for persisting these in store.
 
 ## Data
 
