@@ -48,7 +48,6 @@ a {
 .center {
   text-align: center;
 }
-
 .active {
   color: #311B92;
   font-weight: 600;
@@ -88,6 +87,17 @@ a {
   margin-right: 12px;
   margin-top: 8px;
   float: left;
+}
+
+.box-purple {
+ margin-top: 10px;
+ border: 1px solid #9575CD;
+}
+.color-purple {
+ color: #9575CD;
+}
+.bg-purple-light {
+ background-color: #EDE7F6;
 }
 .question {
   width: 100%;
