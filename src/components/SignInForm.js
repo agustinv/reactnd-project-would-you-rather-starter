@@ -23,10 +23,10 @@ class SignInForm extends Component {
         </div>
       </div>
       <div className='question-info'>
-       <h3 className='center color-purple'>please sign in to continue</h3>
+       <h3 className='center color-purple'>Please Log In to Continue</h3>
        <form className='signin'>
         <select value="selectOne" onChange={this.signIn} >
-          <option key="select" value="selectOne" disabled>Sign In...</option>
+          <option key="select" value="selectOne" disabled>... login as ...</option>
           { users.map((u) => (
              <option key={u.id} value={u.id}>{u.name}</option>
           ))}

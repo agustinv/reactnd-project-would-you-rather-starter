@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import LoadingBar from 'react-redux-loading'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { Switch } from 'react-router-dom'
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
@@ -26,7 +27,10 @@ class App extends Component {
           <Nav />
           <div className='container'>
             { authedUser === null
-              ? <SignInForm />
+              ? <Switch>
+                  <Route path='/' exact component={SignInForm} />
+                  <Route render={() => (<Redirect to='/' />)} />
+                </Switch>
               : <Switch>
                   <Route path='/' exact component={Dashboard} />
                   <Route path='/leaderboard' exact component={LeaderBoard} />
@@ -40,6 +44,13 @@ class App extends Component {
     );
   }
 }
+
+
+//if (toHome === true ) {
+//  return <Redirect to='/' />
+//}
+
+
 function mapStateToProps({ authedUser }) {
   return {
     authedUser,
