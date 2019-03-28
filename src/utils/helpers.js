@@ -15,14 +15,20 @@ export function formatQuestionResults (question, author, authedUser) {
     optionOneVotes: optionOneVotes,
     optionTwoVotes: optionTwoVotes,
     totalVotes: totalVotes,
-    percentOptionOne: totalVotes !== 0 ? optionOneVotes * 100 / totalVotes : 0,
-    percentOptionTwo: totalVotes !== 0 ? optionTwoVotes * 100 / totalVotes : 0,
+    percentOptionOne:  percentage(optionOneVotes, totalVotes),
+    percentOptionTwo:  percentage(optionTwoVotes, totalVotes),
     selectedOptionOne: selectedOptionOne,
     selectedOptionTwo: selectedOptionTwo,
     answeredQuestion: selectedOptionOne || selectedOptionTwo,
     avatar: avatarURL,
   }
 }
+
+function percentage(number, total) {
+  const percent = total !== 0 ? Math.round(number * 10000 / total) / 100 : 0
+  return percent
+}
+
 
 export function formatUserScores (user, questions) {
   const { id, name, avatarURL } = user
