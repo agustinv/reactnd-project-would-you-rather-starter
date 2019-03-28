@@ -3,14 +3,20 @@ export function formatQuestionResults (question, author, authedUser) {
   const { name, avatarURL } = author
   const selectedOptionOne = optionOne.votes.includes(authedUser)
   const selectedOptionTwo = optionTwo.votes.includes(authedUser)
+  const optionOneVotes = optionOne.votes.length
+  const optionTwoVotes = optionTwo.votes.length
+  const totalVotes = optionOneVotes + optionTwoVotes
 
   return {
     name,
     id,
     optionOneText: optionOne.text,
-    optionOneVotes: optionOne.votes.length,
     optionTwoText: optionTwo.text,
-    optionTwoVotes: optionTwo.votes.length,
+    optionOneVotes: optionOneVotes,
+    optionTwoVotes: optionTwoVotes,
+    totalVotes: totalVotes,
+    percentOptionOne: totalVotes !== 0 ? optionOneVotes * 100 / totalVotes : 0,
+    percentOptionTwo: totalVotes !== 0 ? optionTwoVotes * 100 / totalVotes : 0,
     selectedOptionOne: selectedOptionOne,
     selectedOptionTwo: selectedOptionTwo,
     answeredQuestion: selectedOptionOne || selectedOptionTwo,
