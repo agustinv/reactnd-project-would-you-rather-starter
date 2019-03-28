@@ -1,10 +1,16 @@
 # Would You Rather Project
 
-This is the starter code for the final assessment project for Udacity's React & Redux course.
 
-The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the ` _DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
 
-Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
+## Installation and Launching Instructions:
+
+
+* First make sure node and npm is installed in your local machine.
+* git clone the git repo (eg git clone git@github.com:agustinv/reactnd-project-would-you-rather-starter.git)
+* cd to local folder of app (eg cd reactnd-project-myread-starter)
+* install all project dependencies with `npm install`
+* start the local server with `npm start`
+
 
 ## Project Overview
 
