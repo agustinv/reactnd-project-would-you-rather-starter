@@ -34,7 +34,7 @@ class QuestionSummary extends Component {
               ... {optionTwoText} ...
             </p>
             <br/>
-            <Link to={`/questions/${id}`} className='question-link'>
+            <Link to={`/questions/${id}`} className='btn'>
                 View Poll
             </Link>
           </div>

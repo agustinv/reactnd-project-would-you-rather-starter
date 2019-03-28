@@ -53,18 +53,18 @@ class NewQuestion extends Component {
       <div>
         <h3 className='center'>Create New Question</h3>
         <form className='new-question' onSubmit={this.handleSubmit}>
-          <textarea
+          <input
             placeholder="Enter Option One Text Here"
             value={optionOne}
             onChange={this.handleOptionOneChange}
-            className='textarea'
+            className='options-input'
           />
           <h4 className='center'> - OR - </h4>
-          <textarea
+          <input
             placeholder="Enter Option Two Text Here"
             value={optionTwo}
             onChange={this.handleOptionTwoChange}
-            className='textarea'
+            className='options-input'
           />
           <button
             className='btn'

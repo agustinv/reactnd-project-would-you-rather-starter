@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 export default function QuestionResults(props) {
-  const { name, avatar, id, optionOneText, optionTwoText, selectedOptionOne, selectedOptionTwo, optionOneVotes, optionTwoVotes, totalVotes, percentOptionOne, percentOptionTwo } = props.results
+  const { name, avatar, optionOneText, optionTwoText, selectedOptionOne, selectedOptionTwo, optionOneVotes, optionTwoVotes, totalVotes, percentOptionOne, percentOptionTwo } = props.results
 
   return   <div className='question'>
             <div className='question-header'>

@@ -43,16 +43,16 @@ function addQuestionAnswer(qid, answer, authedUser) {
   }
 }
 
-export function handleSaveQuestionAnswer(question, answer) {
+export function handleSaveQuestionAnswer(qid, answer) {
   return (dispatch, getState) => {
     const { authedUser } = getState()
     dispatch(showLoading())
     return saveQuestionAnswer({
       authedUser: authedUser,
-      qid: question.id,
+      qid: qid,
       answer: answer,
     })
-    .then(() => dispatch(addQuestionAnswer(question.id, answer, authedUser)))
+    .then(() => dispatch(addQuestionAnswer(qid, answer, authedUser)))
     .then(() => dispatch(hideLoading()))
   }
 }

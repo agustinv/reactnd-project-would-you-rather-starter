@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NoMatch from './NoMatch'
 import QuestionResult from './QuestionResult'
+import QuestionAnswer from './QuestionAnswer'
 import { formatQuestionResults } from '../utils/helpers'
 
 class QuestionPage extends Component {
   render() {
-    const { noMatch, showContent, results } = this.props
+    const { noMatch, showContent, results, dispatch } = this.props
 
     if (showContent === false) {
       return null
@@ -20,7 +21,7 @@ class QuestionPage extends Component {
       <div>
         { results.answeredQuestion === true
           ? <QuestionResult results={results} />
-          : <span> Question Answer Form </span> }
+          : <QuestionAnswer results={results} dispatch={dispatch} /> }
       </div>
     )
   }
@@ -33,9 +34,9 @@ function mapStateToProps ({ authedUser, questions, users, loadingBar }, props) {
   const results = noMatch ? {} : formatQuestionResults(question, users[question.author], authedUser)
 
   return {
-    noMatch: noMatch,
-    results: results,
-    showContent: loadingBar ? (loadingBar.default === 0) : false
+    noMatch,
+    results,
+    showContent: loadingBar ? (loadingBar.default === 0) : false,
   }
 }
 
