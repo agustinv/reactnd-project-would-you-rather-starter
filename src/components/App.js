@@ -17,6 +17,7 @@ class App extends Component {
   }
   render() {
     const { authedUser } = this.props
+
     return (
       <Router>
         <Fragment>
@@ -38,5 +39,9 @@ class App extends Component {
     );
   }
 }
-
-export default connect()(App);
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser,
+  }
+}
+export default connect(mapStateToProps)(App);
