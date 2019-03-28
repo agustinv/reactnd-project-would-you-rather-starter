@@ -93,14 +93,14 @@ New Question View Components
     - Nav
     - New Question Form
 
-Question View Components
+QuestionPage View Components
     - App
     - 404 Page Component/NoMatch
     - SignIn Form
     - Nav
     - Question Component
-        - Name of author, avatar, form selection and submit (unanswerd)
-        - Name of author, avatar, Results and loggedin user selection
+        - QuestionAnswer Component:  Name of author, avatar, form selection and submit (unanswerd)
+        - QuestionResult Component:  Name of author, avatar, Results and loggedin user selection
 
 ### Determine Events In The App
 
@@ -119,7 +119,7 @@ Question View Components
     - Get Question id from list of Questions
     - Get authedUser to know what to display in summary
 
-* Question Component
+* QuestionPage Component
     - Get Question id from url
     - Get authedUser to display question or results, and submit question answer
 

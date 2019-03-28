@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { formatQuestionSummary } from '../utils/helpers'
+import { formatQuestionResults } from '../utils/helpers'
 
 class QuestionSummary extends Component {
   render() {
@@ -44,12 +44,12 @@ class QuestionSummary extends Component {
   }
 }
 
-function mapStateToProps ({users, questions}, { id }) {
+function mapStateToProps ({authedUser, users, questions}, { id }) {
   const question = questions[id]
 
   return {
     summary: question
-      ? formatQuestionSummary (question, users[question.author])
+      ? formatQuestionResults (question, users[question.author], authedUser)
       : null
   }
 }

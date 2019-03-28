@@ -45,34 +45,34 @@ class NewQuestion extends Component {
       return <Redirect to='/' />
     }
 
+    if (showContent === false) {
+      return null
+    }
+
     return (
       <div>
-        { showContent === false
-          ? null
-          : <div>
-              <h3 className='center'>Create New Question</h3>
-              <form className='new-question' onSubmit={this.handleSubmit}>
-                <textarea
-                  placeholder="Enter Option One Text Here"
-                  value={optionOne}
-                  onChange={this.handleOptionOneChange}
-                  className='textarea'
-                />
-                <h4 className='center'> - OR - </h4>
-                <textarea
-                  placeholder="Enter Option Two Text Here"
-                  value={optionTwo}
-                  onChange={this.handleOptionTwoChange}
-                  className='textarea'
-                />
-                <button
-                  className='btn'
-                  type='submit'
-                  disabled={optionTwo === '' || optionOne === ''}>
-                    Submit
-                </button>
-              </form>
-            </div>}
+        <h3 className='center'>Create New Question</h3>
+        <form className='new-question' onSubmit={this.handleSubmit}>
+          <textarea
+            placeholder="Enter Option One Text Here"
+            value={optionOne}
+            onChange={this.handleOptionOneChange}
+            className='textarea'
+          />
+          <h4 className='center'> - OR - </h4>
+          <textarea
+            placeholder="Enter Option Two Text Here"
+            value={optionTwo}
+            onChange={this.handleOptionTwoChange}
+            className='textarea'
+          />
+          <button
+            className='btn'
+            type='submit'
+            disabled={optionTwo === '' || optionOne === ''}>
+              Submit
+          </button>
+        </form>
       </div>
     )
   }

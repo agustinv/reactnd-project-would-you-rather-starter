@@ -1,12 +1,19 @@
-export function formatQuestionSummary (question, author) {
+export function formatQuestionResults (question, author, authedUser) {
   const { id, optionOne, optionTwo } = question
   const { name, avatarURL } = author
+  const selectedOptionOne = optionOne.votes.includes(authedUser)
+  const selectedOptionTwo = optionTwo.votes.includes(authedUser)
 
   return {
     name,
     id,
     optionOneText: optionOne.text,
+    optionOneVotes: optionOne.votes.length,
     optionTwoText: optionTwo.text,
+    optionTwoVotes: optionTwo.votes.length,
+    selectedOptionOne: selectedOptionOne,
+    selectedOptionTwo: selectedOptionTwo,
+    answeredQuestion: selectedOptionOne || selectedOptionTwo,
     avatar: avatarURL,
   }
 }

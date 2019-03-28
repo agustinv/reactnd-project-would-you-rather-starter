@@ -1,6 +1,6 @@
 import React from 'react'
 
-function UserScore(props) {
+export default function UserScore(props) {
   const { user } = props
   const { name, avatar, answered, created, score } = user
 
@@ -24,5 +24,3 @@ function UserScore(props) {
             </div>
           </div>
 }
-
-export default UserScore
