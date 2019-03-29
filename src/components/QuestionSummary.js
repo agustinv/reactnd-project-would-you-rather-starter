@@ -23,7 +23,7 @@ class QuestionSummary extends Component {
           />
           <div className="question-title">
             {name} asks:
-            <strong><em> Would you rather?</em></strong>
+            <strong><em> Would You Rather?</em></strong>
           </div>
         </div>
         <div className='question-info'>

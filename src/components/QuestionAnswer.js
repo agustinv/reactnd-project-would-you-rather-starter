@@ -33,7 +33,7 @@ class QuestionAnswer extends React.Component {
           </div>
         </div>
         <div className='question-info'>
-          <h2>Would you rather .. </h2>
+          <h2>Would You Rather .. </h2>
 
           <form>
             <div className="form-check">
